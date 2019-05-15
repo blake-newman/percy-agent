@@ -19,7 +19,7 @@ $ npm install -g @percy/agent
 $ percy COMMAND
 running command...
 $ percy (-v|--version|version)
-@percy/agent/0.4.8 linux-x64 node-v10.15.3
+@percy/agent/0.4.8 linux-x64 node-v10.15.1
 $ percy --help [COMMAND]
 USAGE
   $ percy COMMAND
@@ -50,6 +50,8 @@ EXAMPLES
   $ percy exec -- bash -c "echo foo && echo bar"
 ```
 
+_See code: [dist/commands/exec.ts](https://github.com/percy/percy-agent/blob/v0.4.8/dist/commands/exec.ts)_
+
 ## `percy finalize`
 
 finalize a build
@@ -66,6 +68,8 @@ EXAMPLE
   [percy] Finalized parallel build.
 ```
 
+_See code: [dist/commands/finalize.ts](https://github.com/percy/percy-agent/blob/v0.4.8/dist/commands/finalize.ts)_
+
 ## `percy help [COMMAND]`
 
 display help for percy
@@ -81,7 +85,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src/commands/help.ts)_
 
 ## `percy snapshot SNAPSHOTDIRECTORY`
 
@@ -114,4 +118,6 @@ EXAMPLES
   $ percy snapshot _site/ --base-url "/blog"
   $ percy snapshot _site/ --ignore-files "/blog/drafts/**"
 ```
+
+_See code: [dist/commands/snapshot.ts](https://github.com/percy/percy-agent/blob/v0.4.8/dist/commands/snapshot.ts)_
 <!-- commandsstop -->
