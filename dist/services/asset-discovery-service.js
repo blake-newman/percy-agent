@@ -178,7 +178,7 @@ class AssetDiscoveryService extends percy_client_service_1.default {
             const maybeResources = await Promise.all(maybeResourcePromises);
             logger_1.profile('--> assetDiscoveryServer.waitForResourceProcessing');
             logger_1.profile('--> assetDiscoveryService.pool.release', { url: rootResourceUrl });
-            await pool.release(page);
+            await pool.destroy(page);
             logger_1.profile('--> assetDiscoveryService.pool.release');
             return maybeResources.filter((maybeResource) => maybeResource != null);
         }
