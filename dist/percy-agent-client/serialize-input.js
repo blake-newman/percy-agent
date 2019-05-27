@@ -36,6 +36,7 @@ exports.cleanSerializedInputElements = cleanSerializedInputElements;
 function serializeCheckableInputElement(el) {
     const checkedAttribute = el.getAttribute('checked');
     const checked = el.checked;
+
     if (checkedAttribute !== null) {
         el.setAttribute(DATA_ATTRIBUTE_VALUE, checkedAttribute);
     }
@@ -70,11 +71,11 @@ function cleanSerializedValueInputElement(el) {
 function cleanPercyValueAttribute(el, attributeName, originalAttributeValue) {
     const originalValue = el.getAttribute(originalAttributeValue);
     el.removeAttribute(originalAttributeValue);
-    if (attributeName === 'value') {
+    if (attributeName === 'value' && originalValue !== null) {
         el.value = originalValue !== null ? originalValue : '';
     }
-    if (attributeName === 'checked') {
-        el.checked = originalValue !== null;
+    if (attributeName === 'checked' && originalValue !== null) {
+        el.checked = originalValue;
     }
     if (originalValue !== null) {
         el.setAttribute(attributeName, `${originalValue}`);
