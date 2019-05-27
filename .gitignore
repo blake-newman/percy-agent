@@ -1,6 +1,6 @@
 *.log
-.oclif.manifest.json
-/dist
+# .oclif.manifest.json
+# /dist
 /node_modules
 .percy.pid
 /tmp/*
