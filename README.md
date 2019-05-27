@@ -19,7 +19,7 @@ $ npm install -g @percy/agent
 $ percy COMMAND
 running command...
 $ percy (-v|--version|version)
-@percy/agent/0.4.9 linux-x64 node-v10.15.3
+@percy/agent/0.4.9 linux-x64 node-v10.15.1
 $ percy --help [COMMAND]
 USAGE
   $ percy COMMAND
@@ -50,6 +50,8 @@ EXAMPLES
   $ percy exec -- bash -c "echo foo && echo bar"
 ```
 
+_See code: [dist/commands/exec.ts](https://github.com/percy/percy-agent/blob/v0.4.9/dist/commands/exec.ts)_
+
 ## `percy finalize`
 
 Finalize a build. Commonly used for parallelized builds, especially when the number of parallelized processes is unknown.
@@ -65,6 +67,8 @@ EXAMPLE
   $ percy finalize --all
   [percy] Finalized parallel build.
 ```
+
+_See code: [dist/commands/finalize.ts](https://github.com/percy/percy-agent/blob/v0.4.9/dist/commands/finalize.ts)_
 
 ## `percy help [COMMAND]`
 
@@ -114,4 +118,6 @@ EXAMPLES
   $ percy snapshot _site/ --base-url "/blog"
   $ percy snapshot _site/ --ignore-files "/blog/drafts/**"
 ```
+
+_See code: [dist/commands/snapshot.ts](https://github.com/percy/percy-agent/blob/v0.4.9/dist/commands/snapshot.ts)_
 <!-- commandsstop -->
