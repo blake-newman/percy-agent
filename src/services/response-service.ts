@@ -120,8 +120,9 @@ export default class ResponseService extends PercyClientService {
       const didWriteFile = this.maybeWriteFile(localCopy, buffer)
       const { fileIsTooLarge, responseBodySize } = this.checkFileSize(localCopy)
 
-      if (!didWriteFile) {
+      if (didWriteFile) {
         logger.debug(`Skipping file copy [already_copied]: ${originalURL}`)
+        return
       }
 
       if (fileIsTooLarge) {
@@ -156,8 +157,9 @@ export default class ResponseService extends PercyClientService {
     const localCopy = path.join(os.tmpdir(), sha)
     const didWriteFile = this.maybeWriteFile(localCopy, buffer)
 
-    if (!didWriteFile) {
+    if (didWriteFile) {
       logger.debug(`Skipping file copy [already_copied]: ${response.url()}`)
+      return
     }
 
     const contentType = response.headers()['content-type']
